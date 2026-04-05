@@ -1,15 +1,19 @@
 import type {Metadata} from 'next';
-import './globals.css'; // Global styles
+import './globals.css';
+import { CookieBanner } from '@/components/ui/cookie-banner';
 
 export const metadata: Metadata = {
-  title: 'Коучинг с нуля | Алексей Якубан',
-  description: 'Попробуйте коучинг за 5 уроков. Программа «Коучинг с нуля» от Алексея Якубана.',
+  title: 'Iakuban Coaching Academy',
+  description: 'Найдите своего коуча. Создайте легендарные результаты в жизни, бизнесе и карьере с помощью квалифицированного коуча ICF.',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ru" className="scroll-smooth" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

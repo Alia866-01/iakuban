@@ -3,6 +3,7 @@
 import { ArrowRight, Globe, Check } from "lucide-react";
 import { motion } from "motion/react";
 import { GlassFilter, GlassEffect } from "@/components/ui/liquid-glass";
+import { MobileMenuButton } from "@/components/ui/mobile-menu";
 
 export default function WebinarThanks() {
   return (
@@ -32,6 +33,7 @@ export default function WebinarThanks() {
               <a href="/webinar" className="text-white border border-white/20 px-6 py-2.5 rounded-full text-[13px] font-semibold hover:opacity-90 transition-all duration-300" style={{ background: 'linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #1e40af 100%)' }}>
                 Вебинар
               </a>
+              <MobileMenuButton />
             </div>
           </GlassEffect>
         </div>
@@ -94,7 +96,7 @@ export default function WebinarThanks() {
       <footer className="relative z-10 py-12 px-6 md:px-12 lg:px-24 bg-[#fafafa]">
         <div className="max-w-2xl mx-auto text-center space-y-6">
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 font-light">
-            <a href="#" className="hover:text-slate-600 transition-colors">Политика конфиденциальности</a>
+            <a href="/legal/privacy" className="hover:text-slate-600 transition-colors">Политика конфиденциальности</a>
             <span className="text-slate-300">·</span>
             <a href="#" className="hover:text-slate-600 transition-colors">Согласие на получение рассылки</a>
             <span className="text-slate-300">·</span>
