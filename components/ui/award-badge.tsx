@@ -215,11 +215,8 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
           </defs>
           <rect width="260" height="54" rx="10" fill={backgroundColor[(place || 2) - 1] || backgroundColor[1]} />
           <rect x="4" y="4" width="252" height="46" rx="8" fill="transparent" stroke="#bbb" strokeWidth="1" />
-          <text fontFamily="Helvetica-Bold, Helvetica" fontSize="9" fontWeight="bold" fill="#666" x="53" y="20">
-            АКАДЕМИЯ КОУЧИНГА
-          </text>
-          <text fontFamily="Helvetica-Bold, Helvetica" fontSize="16" fontWeight="bold" fill="#666" x="52" y="40">
-            {title[type]}{place && ` #${place}`}
+          <text fontFamily="Helvetica-Bold, Helvetica" fontSize="11" fontWeight="bold" fill="#666" x="53" y="32">
+            СЕРТИФИЦИРОВАННЫЕ КОУЧИ ICF
           </text>
           <g transform="translate(8, 9)">
             <path fill="#666"
