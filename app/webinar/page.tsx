@@ -383,8 +383,10 @@ export default function WebinarPage() {
 
               {/* Quote item */}
               <div className="flex items-start gap-6 group">
-                <div className="text-xs font-mono text-slate-400 mt-0.5">04</div>
-                <p className="text-sm text-slate-600 leading-relaxed font-light italic group-hover:text-slate-900 transition-colors">
+              </div>
+
+              <div className="mt-8 bg-white rounded-2xl p-6 border border-black/[0.05] shadow-[0_0_60px_-15px_rgba(147,197,253,0.4),0_4px_20px_-5px_rgba(0,0,0,0.04)]">
+                <p className="text-base text-slate-700 leading-relaxed font-light italic text-center">
                   «Сам был 1.5 года в терапии у одного специалиста, потом ещё 1.5 года у него же в коучинге. Знаю разницу не из учебника.»
                 </p>
               </div>
@@ -464,26 +466,51 @@ export default function WebinarPage() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <input
                       type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      name="name"
                       placeholder="Ваше имя"
                       required
-                      className="w-full bg-white rounded-full px-6 py-4 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                      className="w-full rounded-full bg-white/10 border border-white/20 px-6 py-4 text-sm text-white placeholder-white/50 outline-none focus:border-white/40 transition-colors"
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Телефон"
+                      required
+                      className="w-full rounded-full bg-white/10 border border-white/20 px-6 py-4 text-sm text-white placeholder-white/50 outline-none focus:border-white/40 transition-colors"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                      className="w-full rounded-full bg-white/10 border border-white/20 px-6 py-4 text-sm text-white placeholder-white/50 outline-none focus:border-white/40 transition-colors"
                     />
                     <input
                       type="text"
-                      value={contact}
-                      onChange={(e) => setContact(e.target.value)}
-                      placeholder="Email или телефон"
-                      required
-                      className="w-full bg-white rounded-full px-6 py-4 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-white/40 transition-all duration-300"
+                      name="telegram"
+                      placeholder="Telegram (@username)"
+                      className="w-full rounded-full bg-white/10 border border-white/20 px-6 py-4 text-sm text-white placeholder-white/50 outline-none focus:border-white/40 transition-colors"
                     />
+                    <div className="space-y-3">
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" required className="mt-1 w-4 h-4 rounded accent-white shrink-0" />
+                        <span className="text-xs text-white/70 font-light leading-relaxed">Я согласен(а) на обработку персональных данных</span>
+                      </label>
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" className="mt-1 w-4 h-4 rounded accent-white shrink-0" />
+                        <span className="text-xs text-white/70 font-light leading-relaxed">Я согласен(а) получать информационную и рекламную рассылку</span>
+                      </label>
+                    </div>
                     <button
                       type="submit"
-                      className="w-full rounded-full px-6 py-4 bg-white text-slate-900 text-sm font-semibold hover:opacity-90 hover:scale-[1.01] transition-all duration-300"
+                      disabled={isLoading}
+                      className="w-full rounded-full bg-white text-slate-900 px-6 py-4 text-sm font-semibold hover:bg-white/90 transition-all duration-300 disabled:opacity-70"
                     >
-                      Зарегистрироваться
+                      {isLoading ? "Отправка..." : "Зарегистрироваться"}
                     </button>
+                    <p className="text-[11px] text-white/50 text-center font-light">
+                      Регистрация бесплатная, записи не будет
+                    </p>
                   </form>
                 </>
               )}
